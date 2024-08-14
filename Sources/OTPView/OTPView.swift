@@ -59,7 +59,7 @@ public struct OtpView:View {
                 Text(" ")
             }
         }
-        .frame(width: 60, height: 60)
+        .frame(width: 55, height: 55)
         .background {
             let status = (isKeyboardShowing && otpText.count == index)
             RoundedRectangle(cornerRadius: 6, style: .continuous)
