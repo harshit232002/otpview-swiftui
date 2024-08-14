@@ -7,13 +7,17 @@ public struct OtpView:View {
     private var inactiveIndicatorColor: Color
     private let doSomething: (String) -> Void
     private let length: Int
+    private let frameWidth: Int
+    private let frameHeight: Int
     
     @State private var otpText = ""
     @FocusState private var isKeyboardShowing: Bool
     
-    public init(activeIndicatorColor:Color,inactiveIndicatorColor:Color, length:Int, doSomething: @escaping (String) -> Void) {
+    public init(activeIndicatorColor:Color,inactiveIndicatorColor:Color, length:Int, frameWidth: Int, frameHeight: Int,doSomething: @escaping (String) -> Void) {
         self.activeIndicatorColor = activeIndicatorColor
         self.inactiveIndicatorColor = inactiveIndicatorColor
+self.frameWidht = frameWidth
+        self.frameHeight = frameHeight
         self.length = length
         self.doSomething = doSomething
     }
@@ -59,7 +63,7 @@ public struct OtpView:View {
                 Text(" ")
             }
         }
-        .frame(width: 30, height: 30)
+        .frame(width: frameWidth, height: frameHeight)
         .background {
             let status = (isKeyboardShowing && otpText.count == index)
             RoundedRectangle(cornerRadius: 6, style: .continuous)
