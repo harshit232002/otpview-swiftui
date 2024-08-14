@@ -16,7 +16,7 @@ public struct OtpView:View {
     public init(activeIndicatorColor:Color,inactiveIndicatorColor:Color, length:Int, frameWidth: Int, frameHeight: Int,doSomething: @escaping (String) -> Void) {
         self.activeIndicatorColor = activeIndicatorColor
         self.inactiveIndicatorColor = inactiveIndicatorColor
-self.frameWidht = frameWidth
+self.frameWidth = frameWidth
         self.frameHeight = frameHeight
         self.length = length
         self.doSomething = doSomething
